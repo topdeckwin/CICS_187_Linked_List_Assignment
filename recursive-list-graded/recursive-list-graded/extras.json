@@ -1,0 +1,12 @@
+[
+  {
+    "name": "limited_use_of_java_util",
+    "user_class": "structures.RecursiveList",
+    "deduction": 100
+  },
+  {
+    "name": "no_iteration_in_class",
+    "java_file": "./src/structures/RecursiveList.java",
+    "deduction": 100
+  }
+]

@@ -1,0 +1,27 @@
+<project name="recursive-list-graded" default="build" basedir=".">
+	<property file="build.properties"/>
+	
+	<path id="classpath">
+		<fileset dir="libs">
+			<include name="*.jar"/>
+		</fileset>
+		<pathelement location="bin"/>
+	</path>
+	
+	<target name="build">
+		<mkdir dir="bin"/>
+		<javac classpathref="classpath"
+			   destdir="bin">
+			<src path="support"/>
+			<src path="src"/>
+			<src path="test"/>
+		</javac>
+	</target>
+	
+	<target name="runner">
+		<java classpathref="classpath" classname="runner.TestRunner">
+			<arg line="${tests}"/>
+		</java>
+	</target>
+	
+</project>
