@@ -1,4 +1,4 @@
-package structures;
+package edu.umass.cics.cs187.structures;
 
 /**
  * A {@link ListInterface} is a container that supports insertion, removal, and
