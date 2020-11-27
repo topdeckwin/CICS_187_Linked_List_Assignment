@@ -1,4 +1,4 @@
-package edu.umass.cics.187;
+package edu.umass.cics.cs187;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
