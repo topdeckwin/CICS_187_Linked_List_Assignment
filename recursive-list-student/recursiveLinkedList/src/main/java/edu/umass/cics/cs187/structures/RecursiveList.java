@@ -37,20 +37,23 @@ public class RecursiveList<T> implements ListInterface<T> {
     private Node<T> next;
 
     public LinkedNodeIterator(Node<T> first) {
-      this.next = first;
+      // TODO: Initialize the iterator by assigning first to next (as the starting point)
+      throw NotImplementedException(); // Remove `throw NotImplementedException()` statements before you go
     }
 
     public boolean hasNext() {
-      return next != null;
+      // TODO: Hint, When the iterator does not have `next`, it will be false
+      throw NotImplementedException();
     }
 
     public T next() {
-      T result = next.getData();
-      next = next.getNext();
-      return result;
+      // TODO: Next should obtain the next node of current node and assign current `next` to the obtained node,
+      //       then return the current node
+      throw NotImplementedException();
     }
 
     public void remove() {
+      // We don't need to support this because we have a single linked list
       throw new UnsupportedOperationException();
     }
   }
@@ -64,25 +67,21 @@ public class RecursiveList<T> implements ListInterface<T> {
   public ListInterface<T> insertFirst(T elem) {
     // At this point, we are definitely adding a node to
     // the list so we increase the size and create a new node
-    
-    // size += 1;
-
-    // head = new Node<T>(elem, head);
-
-    // return this;
+    throw NotImplementedException();
   }
 
   @Override
   public ListInterface<T> insertLast(T elem) {
+    // TODO: Use `insertAt` to insert `elem` at the *last* element
     return insertAt(size, elem);
   }
 
   @Override
   public ListInterface<T> insertAt(int index, T elem) {
-    if (index < 0 || index > size) {
-      throw new IndexOutOfBoundsException();
-    }
+    // It is always a good practice to check boundaries before preceeding
+    // Here we should check index to fall in the range. If not throw exception by `throw new IndexOutOfBoundsException();`   
 
+    // TODO: Insert your code here
 
     // If we've made it this far, the index passed to this method
     // is a valid index.
@@ -90,125 +89,113 @@ public class RecursiveList<T> implements ListInterface<T> {
     // If index is 0, we want to insert at the front of
     // the list. So, we simply call insertFirst and
     // return what that returns
-    if (index == 0) {
-      return insertFirst(elem);
-    }
+
+    // TODO: Insert your code here
 
     // If we've made it this far, we are definitely adding a
-    // new node to the list so we increment the size and
-    // create a new node
-    size += 1;
-    Node<T> prev = findNode(index - 1, head);
-    Node<T> newNode = new Node<T>(elem, prev.getNext());
+    // new node to the list. So we increment the size and
+    // create a new node by finding the node before the index
 
-
-    // If we've made it this far, we are inserting the
-    // value somewhere within the list. This means we
-    // are going to have to set the next value of some node
+    // We are inserting the value somewhere within the list. 
+    // This means we are going to have to set the next value of some node
     // to be the new node. So, first we find the previous node.
     // Then, we set the next of the new node to be whatever that
     // previous node was pointing at (null in the case where we
     // are inserting at the end of the list). Then, we
     // set the previous node to point at the new node
     // finally we return this list.
-    prev.setNext(newNode);
+    
+    // TODO: Insert your code here
+
     return this;
   }
 
   @Override
   public T removeFirst() {
-    if (isEmpty()) {
-      throw new IllegalStateException();
-    }
-    return removeAt(0);
+    // TODO: Check the list actually have the `first` node (which is not empty). 
+    // If not, throw `IllegalStateException` like what we did before
+
+    // TODO: Remove by calling `removeAt`
   }
 
   @Override
   public T removeLast() {
-    if (isEmpty()) {
-      throw new IllegalStateException();
-    }
-    return removeAt(size - 1);
+    // TODO: Check the list actually have the `last` node (which is not empty). 
+    // If not, throw `IllegalStateException` like what we did before
+
+    // TODO: Remove by calling `removeAt`
   }
 
   @Override
   public T removeAt(int i) {
-    if (i < 0 || i >= size) {
-      throw new IndexOutOfBoundsException();
-    }
+    // TODO: Check if `i` falls into the range. If not, throw exception like what we did before.
+
     // If we've made it past the check above, we are definitely
     // going to be removing something so we decrement the size by 1
-    size -= 1;
+
+    // TODO: Insert your code here
 
     // If we are removing the first element, we have a special case
     // where we have to update the reference to head to be the
     // node after head
-    if (i == 0) {
-      T val = head.getData();
-      head = head.getNext();
-      return val;
-    }
+
+    // TODO: Insert your code here
 
     // Otherwise, we find the node right before the one to remove
     // do some patch work, then return its data
-    Node<T> prev = findNode(i - 1, head);
+    // TODO: Insert your code here
 
     // The node we are removing is the node after the previous node
-    Node<T> remove = prev.getNext();
+    // TODO: Insert your code here
 
     // The previous node should point at the node after the one we are
     // removing. We know for sure that remove is not null. If it is
     // the last element then remove.next is null and so prev.next will
     // be null. This means that prev is now the end of the list!
-    prev.setNext(remove.getNext());
+    // TODO: Insert your code here
 
     // Finally, we return the value in remove
-    return remove.getData();
+    // TODO: Insert your code here
   }
 
   @Override
   public T getFirst() {
-    if (isEmpty()) {
-      throw new IllegalStateException();
-    }
-    return get(0);
+    // TODO: Check the list actually have the `first` node (which is not empty). 
+    // If not, throw `IllegalStateException` like what we did before
+
+    // TODO: After passed the check, return the first node by `get`
   }
 
   @Override
   public T getLast() {
-    if (isEmpty()) {
-      throw new IllegalStateException();
-    }
-    return get(size - 1);
+    // TODO: Check the list actually have the `last` node (which is not empty). 
+    // If not, throw `IllegalStateException` like what we did before
+
+    // TODO: After passed the check, return the first node by `get`
+    // Note that the last node have index lesser than `size`
   }
 
   @Override
   public T get(int i) {
-    if (i < 0 || i >= size) {
-      throw new IndexOutOfBoundsException();
-    }
-    return findNode(i, head).getData();
+    // TODO: Check if `i` falls into the range. If not, throw exception like what we did before.
+    // TODO: `get` by `findNode` and then `getData`
   }
 
   @Override
   public boolean remove(T elem) {
     // An empty list will always return false because the
     // element won't be found
-    if (head == null) {
-      return false;
-    }
+
+    // TODO: Insert your code here
 
     // We try to find the element
-    int i = indexOf(elem);
+    // TODO: Insert your code here
 
     // If we didn't find it, we return false
-    if (i == -1) {
-      return false;
-    }
+    // TODO: Insert your code here
 
     // Otherwise we remove it and return true.
-    removeAt(i);
-    return true;
+    // TODO: Insert your code here
   }
 
   @Override
@@ -219,34 +206,31 @@ public class RecursiveList<T> implements ListInterface<T> {
   private int indexOfHelper(T elem, int index, Node<T> node) {
     // If node is null, we've reached the end of the list
     // and we didn't find the node so we return -1
-    if (node == null) {
-      return -1;
-    }
+    
+    // TODO: Insert your code here
+
     // Otherwise, we are not at the end so we check to see if
     // the element is here. If it is, we return the index we
     // are at
-    if (node.getData().equals(elem)) {
-      return index;
-    }
+
+    // TODO: Insert your code here
 
     // Otherwise, we recur on the next element increasing the index
     // by 1.
-    return indexOfHelper(elem, index + 1, node.getNext());
+
+    // TODO: Insert your recursion code here
   }
 
   @Override
   public boolean isEmpty() {
-    return head == null;
+    // TODO: Check if head is null
   }
 
   // Finds the node that is distance nodes after curr. That is,
   // if distance is 0, then curr is returned. Otherwise,
   // we recurse down the list.
   private final Node<T> findNode(int distance, Node<T> curr) {
-    if (distance == 0) {
-      return curr;
-    }
-    return findNode(distance - 1, curr.getNext());
+    // TODO: Insert your code here
   }
 
   public Iterator<T> iterator() {
