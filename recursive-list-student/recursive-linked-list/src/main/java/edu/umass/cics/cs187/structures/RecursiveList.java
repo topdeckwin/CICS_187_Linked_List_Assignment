@@ -116,6 +116,7 @@ public class RecursiveList<T> implements ListInterface<T> {
     // If not, throw `IllegalStateException` like what we did before
 
     // TODO: Remove by calling `removeAt`
+    throw NotImplementedException();
   }
 
   @Override
@@ -124,6 +125,7 @@ public class RecursiveList<T> implements ListInterface<T> {
     // If not, throw `IllegalStateException` like what we did before
 
     // TODO: Remove by calling `removeAt`
+    throw NotImplementedException();
   }
 
   @Override
@@ -156,6 +158,7 @@ public class RecursiveList<T> implements ListInterface<T> {
 
     // Finally, we return the value in remove
     // TODO: Insert your code here
+    throw NotImplementedException();
   }
 
   @Override
@@ -164,6 +167,7 @@ public class RecursiveList<T> implements ListInterface<T> {
     // If not, throw `IllegalStateException` like what we did before
 
     // TODO: After passed the check, return the first node by `get`
+    throw NotImplementedException();
   }
 
   @Override
@@ -173,12 +177,14 @@ public class RecursiveList<T> implements ListInterface<T> {
 
     // TODO: After passed the check, return the first node by `get`
     // Note that the last node have index lesser than `size`
+    throw NotImplementedException();
   }
 
   @Override
   public T get(int i) {
     // TODO: Check if `i` falls into the range. If not, throw exception like what we did before.
     // TODO: `get` by `findNode` and then `getData`
+    throw NotImplementedException();
   }
 
   @Override
@@ -196,6 +202,7 @@ public class RecursiveList<T> implements ListInterface<T> {
 
     // Otherwise we remove it and return true.
     // TODO: Insert your code here
+    throw NotImplementedException();
   }
 
   @Override
@@ -219,11 +226,15 @@ public class RecursiveList<T> implements ListInterface<T> {
     // by 1.
 
     // TODO: Insert your recursion code here
+
+    throw NotImplementedException();
   }
 
   @Override
   public boolean isEmpty() {
     // TODO: Check if head is null
+
+    throw NotImplementedException();
   }
 
   // Finds the node that is distance nodes after curr. That is,
@@ -231,6 +242,8 @@ public class RecursiveList<T> implements ListInterface<T> {
   // we recurse down the list.
   private final Node<T> findNode(int distance, Node<T> curr) {
     // TODO: Insert your code here
+
+    throw NotImplementedException();
   }
 
   public Iterator<T> iterator() {
