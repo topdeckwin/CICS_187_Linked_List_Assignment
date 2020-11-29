@@ -1,4 +1,4 @@
-package structures;
+package edu.umass.cics.cs187.structures;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;

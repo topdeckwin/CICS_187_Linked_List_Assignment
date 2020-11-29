@@ -1,4 +1,4 @@
-package structures;
+package edu.umass.cics.cs187.structures;
 
 import java.util.Iterator;
 

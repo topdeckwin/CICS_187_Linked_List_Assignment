@@ -6,8 +6,8 @@ import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import com.gradescope.jh61b.grader.GradedTestListenerJSON;
 
-import structures.PrivateListInterfaceStudentTest;
-import structures.PrivateListInterfaceTest;
+import edu.umass.cics.cs187.structures.PrivateListInterfaceStudentTest;
+import edu.umass.cics.cs187.structures.PrivateListInterfaceTest;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
