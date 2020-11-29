@@ -1,7 +1,8 @@
-package edu.umass.cics.cs187.structures;
+package edu.umass.cics.cs187.structures.grader;
 
 import static org.junit.Assert.*;
 
+import edu.umass.cics.cs187.structures.ListInterface;
 import org.junit.Before;
 import org.junit.Test;
 
