@@ -12,9 +12,7 @@
 		<mkdir dir="bin"/>
 		<javac classpathref="classpath"
 			   destdir="bin">
-			<src path="support"/>
 			<src path="src"/>
-			<src path="test"/>
 		</javac>
 	</target>
 	

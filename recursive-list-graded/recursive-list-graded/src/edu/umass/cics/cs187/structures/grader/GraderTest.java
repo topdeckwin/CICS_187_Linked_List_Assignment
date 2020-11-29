@@ -6,34 +6,35 @@ import edu.umass.cics.cs187.structures.ListInterface;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.gradescope.jh61b.grader.GradedTest;
+import com.github.tkutche1.jgrade.gradedtest.GradedTest;
+import static com.github.tkutche1.jgrade.gradedtest.GradedTestResult.HIDDEN;
+import static com.github.tkutche1.jgrade.gradedtest.GradedTestResult.VISIBLE;
 
-public class PrivateListInterfaceTest {
+public class GraderTest {
 
 	private ListInterface<String> list;
 
 	@Before
 	public void setup(){
-          list = new RecursiveList<String>();
+		list = new RecursiveList<String>();
 //          ListInterface<String> l2 = new RecursiveList<String>();
 	}
 
 	@Test (timeout = 500)
-	@GradedTest(name="public void testInsertFirstIsEmptySizeAndGetFirst1() {", max_score=1)
+	@GradedTest(name="Newly constructed list should be empty", points = 1)
 	public void testInsertFirstIsEmptySizeAndGetFirst1() {
 		assertTrue("Newly constructed list should be empty.", list.isEmpty());
 	}
 
 	@Test (timeout = 500)
-	@GradedTest(name="public void testInsertFirstIsEmptySizeAndGetFirst2() {", max_score=1)
+	@GradedTest(name="Newly constructed list should be size 0", points = 1)
 	public void testInsertFirstIsEmptySizeAndGetFirst2() {
-		assertTrue("Newly constructed list should be empty.", list.isEmpty());
 		assertEquals("Newly constructed list should be size 0.", 0, list.size());
 
 	}
 
 	@Test (timeout = 500)
-	@GradedTest(name="public void testInsertFirstIsEmptySizeAndGetFirst3() {", max_score=1)
+	@GradedTest(name="Insert First should return instance of self", points = 1)
 	public void testInsertFirstIsEmptySizeAndGetFirst3() {
 		assertTrue("Newly constructed list should be empty.", list.isEmpty());
 		assertEquals("Newly constructed list should be size 0.", 0, list.size());
@@ -42,7 +43,7 @@ public class PrivateListInterfaceTest {
 	}
 
 	@Test (timeout = 500)
-	@GradedTest(name="public void testInsertFirstIsEmptySizeAndGetFirst4() {", max_score=2)
+	@GradedTest(name="List should now have elements after insertion", points = 1)
 	public void testInsertFirstIsEmptySizeAndGetFirst4() {
 		assertTrue("Newly constructed list should be empty.", list.isEmpty());
 		assertEquals("Newly constructed list should be size 0.", 0, list.size());
@@ -51,7 +52,7 @@ public class PrivateListInterfaceTest {
 	}
 
 	@Test (timeout = 500)
-	@GradedTest(name="public void testInsertFirstIsEmptySizeAndGetFirst5() {", max_score=2)
+	@GradedTest(name="List should now have exactly 1 element after 1 insertion", points = 2)
 	public void testInsertFirstIsEmptySizeAndGetFirst5() {
 		assertTrue("Newly constructed list should be empty.", list.isEmpty());
 		assertEquals("Newly constructed list should be size 0.", 0, list.size());
@@ -61,7 +62,7 @@ public class PrivateListInterfaceTest {
 	}
 
 	@Test (timeout = 500)
-	@GradedTest(name="public void testInsertFirstIsEmptySizeAndGetFirst6() {", max_score=2)
+	@GradedTest(name="First element should .equals \"hello\" after inserted \"hello\"", points = 2)
 	public void testInsertFirstIsEmptySizeAndGetFirst6() {
 		assertTrue("Newly constructed list should be empty.", list.isEmpty());
 		assertEquals("Newly constructed list should be size 0.", 0, list.size());
@@ -72,7 +73,7 @@ public class PrivateListInterfaceTest {
 	}
 
 	@Test (timeout = 500)
-	@GradedTest(name="public void testInsertFirstIsEmptySizeAndGetFirst7() {", max_score=2)
+	@GradedTest(name="List should have exactly 3 elements after another insertion", points = 2)
 	public void testInsertFirstIsEmptySizeAndGetFirst7() {
 		assertTrue("Newly constructed list should be empty.", list.isEmpty());
 		assertEquals("Newly constructed list should be size 0.", 0, list.size());
@@ -85,7 +86,7 @@ public class PrivateListInterfaceTest {
 	}
 
 	@Test (timeout = 500)
-	@GradedTest(name="public void testInsertFirstIsEmptySizeAndGetFirst8() {", max_score=5)
+	@GradedTest(name="List should have exactly 3 elements after 3rd insertion", points = 5)
 	public void testInsertFirstIsEmptySizeAndGetFirst8() {
 		assertTrue("Newly constructed list should be empty.", list.isEmpty());
 		assertEquals("Newly constructed list should be size 0.", 0, list.size());
@@ -100,7 +101,7 @@ public class PrivateListInterfaceTest {
 	}
 
 	@Test (timeout = 500)
-	@GradedTest(name="public void testInsertFirstIsEmptySizeAndGetFirst9() {", max_score=5)
+	@GradedTest(name="List have most recently inserted as its first element", points= 5)
 	public void testInsertFirstIsEmptySizeAndGetFirst9() {
 		assertTrue("Newly constructed list should be empty.", list.isEmpty());
 		assertEquals("Newly constructed list should be size 0.", 0, list.size());
@@ -116,20 +117,7 @@ public class PrivateListInterfaceTest {
 	}
 
 	@Test (timeout = 500)
-	@GradedTest(name="public void testInsertLastIsEmptySizeAndGetLast1() {", max_score=1)
-	public void testInsertLastIsEmptySizeAndGetLast1() {
-		assertTrue("Newly constructed list should be empty.", list.isEmpty());
-	}
-
-	@Test (timeout = 500)
-	@GradedTest(name="public void testInsertLastIsEmptySizeAndGetLast2() {", max_score=1)
-	public void testInsertLastIsEmptySizeAndGetLast2() {
-		assertTrue("Newly constructed list should be empty.", list.isEmpty());
-		assertEquals("Newly constructed list should be size 0.", 0, list.size());
-	}
-
-	@Test (timeout = 500)
-	@GradedTest(name="public void testInsertLastIsEmptySizeAndGetLast3() {", max_score=1)
+	@GradedTest(name="Insert Last should return instance of self", points = 1)
 	public void testInsertLastIsEmptySizeAndGetLast3() {
 		assertTrue("Newly constructed list should be empty.", list.isEmpty());
 		assertEquals("Newly constructed list should be size 0.", 0, list.size());
@@ -137,7 +125,7 @@ public class PrivateListInterfaceTest {
 	}
 
 	@Test (timeout = 500)
-	@GradedTest(name="public void testInsertLastIsEmptySizeAndGetLast4() {", max_score=2)
+	@GradedTest(name="List should now have elements after insert last", points = 2)
 	public void testInsertLastIsEmptySizeAndGetLast4() {
 		assertTrue("Newly constructed list should be empty.", list.isEmpty());
 		assertEquals("Newly constructed list should be size 0.", 0, list.size());
@@ -146,7 +134,7 @@ public class PrivateListInterfaceTest {
 	}
 
 	@Test (timeout = 500)
-	@GradedTest(name="public void testInsertLastIsEmptySizeAndGetLast5() {", max_score=2)
+	@GradedTest(name="List should now have 1 element after insert last", points = 2)
 	public void testInsertLastIsEmptySizeAndGetLast5() {
 		assertTrue("Newly constructed list should be empty.", list.isEmpty());
 		assertEquals("Newly constructed list should be size 0.", 0, list.size());
@@ -156,7 +144,7 @@ public class PrivateListInterfaceTest {
 	}
 
 	@Test (timeout = 500)
-	@GradedTest(name="public void testInsertLastIsEmptySizeAndGetLast6() {", max_score=1)
+	@GradedTest(name="Last element should .equals \"hello\"", points = 1)
 	public void testInsertLastIsEmptySizeAndGetLast6() {
 		assertTrue("Newly constructed list should be empty.", list.isEmpty());
 		assertEquals("Newly constructed list should be size 0.", 0, list.size());
@@ -167,7 +155,7 @@ public class PrivateListInterfaceTest {
 	}
 
 	@Test (timeout = 500)
-	@GradedTest(name="public void testInsertLastIsEmptySizeAndGetLast7() {", max_score=2)
+	@GradedTest(name="List should have exactly 2 elements after second insert last operation", points = 2)
 	public void testInsertLastIsEmptySizeAndGetLast7() {
 		assertTrue("Newly constructed list should be empty.", list.isEmpty());
 		assertEquals("Newly constructed list should be size 0.", 0, list.size());
@@ -180,7 +168,7 @@ public class PrivateListInterfaceTest {
 	}
 
 	@Test (timeout = 500)
-	@GradedTest(name="public void testInsertLastIsEmptySizeAndGetLast8() {", max_score=2)
+	@GradedTest(name="List should have exactly 3 elements after 3rd insert last operation", points = 2)
 	public void testInsertLastIsEmptySizeAndGetLast8() {
 		assertTrue("Newly constructed list should be empty.", list.isEmpty());
 		assertEquals("Newly constructed list should be size 0.", 0, list.size());
@@ -195,7 +183,7 @@ public class PrivateListInterfaceTest {
 	}
 
 	@Test (timeout = 500)
-	@GradedTest(name="public void testInsertLastIsEmptySizeAndGetLast9() {", max_score=5)
+	@GradedTest(name="List should have \"foo\" elements after 3rd insert last operation", points = 5)
 	public void testInsertLastIsEmptySizeAndGetLast9() {
 		assertTrue("Newly constructed list should be empty.", list.isEmpty());
 		assertEquals("Newly constructed list should be size 0.", 0, list.size());
@@ -211,7 +199,7 @@ public class PrivateListInterfaceTest {
 	}
 
 	@Test (timeout = 500)
-	@GradedTest(name="public void testInsertAtIsEmptySizeAndGetAt() {", max_score=10)
+	@GradedTest(name="Ordering test for insert at", points = 10)
 	public void testInsertAtIsEmptySizeAndGetAt() {
 		assertTrue("Newly constructed list should be empty.", list.isEmpty());
 		assertEquals("Newly constructed list should be size 0.", 0, list.size());
@@ -230,19 +218,19 @@ public class PrivateListInterfaceTest {
 	}
 
 	@Test (timeout = 500, expected = IllegalStateException.class)
-	@GradedTest(name="public void testExceptionOnEmptyGetFirst() {", max_score=1)
+	@GradedTest(name="Should throw exception on get first from empty list", points = 1)
 	public void testExceptionOnEmptyGetFirst() {
 		list.getFirst();
 	}
 
 	@Test (timeout = 500, expected = IllegalStateException.class)
-	@GradedTest(name="public void testExceptionOnEmptyGetLast() {", max_score=1)
+	@GradedTest(name="Should throw exception on get last from empty list", points = 1)
 	public void testExceptionOnEmptyGetLast() {
 		list.getLast();
 	}
 
 	@Test (timeout = 500)
-	@GradedTest(name="public void testInsertFirstRemoveFirstSizeAndIsEmpty() {", max_score=10)
+	@GradedTest(name="Remove first should work properly", points = 10)
 	public void testInsertFirstRemoveFirstSizeAndIsEmpty() {
 		assertTrue("Newly constructed list should be empty.", list.isEmpty());
 		list.insertFirst("hello").insertFirst("there").insertFirst("world");
@@ -257,7 +245,7 @@ public class PrivateListInterfaceTest {
 	}
 
 	@Test (timeout = 500)
-	@GradedTest(name="public void testInsertLastRemoveLastSizeAndIsEmpty() {", max_score=10)
+	@GradedTest(name="Remove last should work properly", points = 10)
 	public void testInsertLastRemoveLastSizeAndIsEmpty() {
 		assertTrue("Newly constructed list should be empty.", list.isEmpty());
 		list.insertLast("hello").insertLast("there").insertLast("world");
@@ -272,45 +260,45 @@ public class PrivateListInterfaceTest {
 	}
 
 	@Test (timeout = 500, expected = IllegalStateException.class)
-	@GradedTest(name="public void testExceptionOnEmptyRemoveFirst() {", max_score=1)
+	@GradedTest(name="Exception on empty remove first", points = 1)
 	public void testExceptionOnEmptyRemoveFirst() {
 		list.removeFirst();
 	}
 
 	@Test (timeout = 500, expected = IllegalStateException.class)
-	@GradedTest(name="public void testExceptionOnEmptyRemoveLast() {", max_score=1)
+	@GradedTest(name="Exception on empty remove last", points = 1)
 	public void testExceptionOnEmptyRemoveLast() {
 		list.removeLast();
 	}
 
 	@Test (timeout = 500, expected = IndexOutOfBoundsException.class)
-	@GradedTest(name="public void testExceptionOnOutOfBounds1() {", max_score=1)
+	@GradedTest(name="Exception on out of bounds (Empty list)", points = 1)
 	public void testExceptionOnOutOfBounds1() {
 		list.removeAt(0);
 	}
 
 	@Test (timeout = 500, expected = IndexOutOfBoundsException.class)
-	@GradedTest(name="public void testExceptionOnOutOfBounds2() {", max_score=1)
+	@GradedTest(name="Exception on out of bounds (1)", points = 1)
 	public void testExceptionOnOutOfBounds2() {
 		list.insertFirst("hello");
 		list.removeAt(1);
 	}
 
 	@Test (timeout = 500, expected = IndexOutOfBoundsException.class)
-	@GradedTest(name="public void testExceptionOnOutOfBounds3() {", max_score=1)
+	@GradedTest(name="Exception on out of bounds (underflow)", points = 1)
 	public void testExceptionOnOutOfBounds3() {
 		list.removeAt(-5);
 	}
 
 	@Test (timeout = 500, expected = IndexOutOfBoundsException.class)
-	@GradedTest(name="public void testExceptionOnOutOfBounds4() {", max_score=1)
+	@GradedTest(name="Exception on out of bounds (overflow)", points = 1)
 	public void testExceptionOnOutOfBounds4() {
 		list.insertFirst("hello");
 		list.removeAt(5);
 	}
 
 	@Test (timeout = 500)
-	@GradedTest(name="public void testInsertsGetsRemovesSize(){", max_score=5)
+	@GradedTest(name="Integrated test (Inserts, gets, removes, size)", points = 5)
 	public void testInsertsGetsRemovesSize(){
 		assertTrue("Newly constructed list should be empty.", list.isEmpty());
 		list.insertLast("Hello").insertLast("World!");
@@ -328,7 +316,7 @@ public class PrivateListInterfaceTest {
 	}
 
 	@Test (timeout = 500)
-	@GradedTest(name="public void testInsertsRemoveAndIndexOf(){", max_score=5)
+	@GradedTest(name="Integrated test (Inserts, remove, indexOf)", points = 5)
 	public void testInsertsRemoveAndIndexOf(){
 		list.insertLast("Hello").insertLast("World");
 		assertEquals("Hello is at index 0", 0, list.indexOf("Hello"));
@@ -349,7 +337,7 @@ public class PrivateListInterfaceTest {
 	}
 
 	@Test (timeout = 1000)
-	@GradedTest(name="public void testSpeed() {", max_score=10)
+	@GradedTest(name="Speed test", points = 10)
 	public void testSpeed() {
 		for(int i = 0; i < 500000; i++){
 			assertEquals(i, list.size());

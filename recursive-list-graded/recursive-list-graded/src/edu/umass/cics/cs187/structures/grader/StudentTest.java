@@ -10,7 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-public class PublicListInterfaceTest {
+public class StudentTest {
 
   private ListInterface<String> list;
 
