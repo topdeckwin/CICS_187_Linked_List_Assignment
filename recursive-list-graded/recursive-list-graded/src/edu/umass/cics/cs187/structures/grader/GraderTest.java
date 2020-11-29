@@ -348,7 +348,4 @@ public class GraderTest {
 		while(!list.isEmpty())
 			list.removeFirst();
 	}
-
-
-
 }
