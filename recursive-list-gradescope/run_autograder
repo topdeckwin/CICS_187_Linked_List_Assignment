@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 cd /autograder/source
-
-cp /autograder/submission/Hello.java /autograder/source/src/main/java/student/hello/
+rm /autograder/source/src/edu/umass/cics/cs187/structures/RecursiveList.java
+cp /autograder/submission/RecursiveList.java /autograder/source/src/edu/umass/cics/cs187/structures/
 
 # compilation
 sh compile.sh

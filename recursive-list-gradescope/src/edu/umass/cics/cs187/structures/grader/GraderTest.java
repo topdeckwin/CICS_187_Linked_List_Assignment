@@ -296,7 +296,7 @@ public class GraderTest {
 	}
 
 	@Test (timeout = 500)
-	@GradedTest(name="Integrated test (Inserts, gets, removes, size)", points = 5)
+	@GradedTest(name="Integrated test (Inserts, gets, removes, size)", points = 6)
 	public void testInsertsGetsRemovesSize(){
 		assertTrue("Newly constructed list should be empty.", list.isEmpty());
 		list.insertLast("Hello").insertLast("World!");
@@ -314,7 +314,7 @@ public class GraderTest {
 	}
 
 	@Test (timeout = 500)
-	@GradedTest(name="Integrated test (Inserts, remove, indexOf)", points = 5)
+	@GradedTest(name="Integrated test (Inserts, remove, indexOf)", points = 6)
 	public void testInsertsRemoveAndIndexOf(){
 		list.insertLast("Hello").insertLast("World");
 		assertEquals("Hello is at index 0", 0, list.indexOf("Hello"));
@@ -335,7 +335,7 @@ public class GraderTest {
 	}
 
 	@Test (timeout = 1000)
-	@GradedTest(name="Speed test", points = 10)
+	@GradedTest(name="Speed test", points = 15)
 	public void testSpeed() {
 		for(int i = 0; i < 500000; i++){
 			assertEquals(i, list.size());
