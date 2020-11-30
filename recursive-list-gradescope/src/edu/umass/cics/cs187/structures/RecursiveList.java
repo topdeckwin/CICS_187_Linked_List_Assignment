@@ -1,6 +1,4 @@
-package edu.umass.cics.cs187.structures.grader;
-
-import edu.umass.cics.cs187.structures.ListInterface;
+package edu.umass.cics.cs187.structures;
 
 import java.util.Iterator;
 
